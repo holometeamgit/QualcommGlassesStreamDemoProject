@@ -1,0 +1,2 @@
+Assets filter=lfs diff=lfs merge=lfs -text
+Assets/AgoraEngine/**/* filter=lfs diff=lfs merge=lfs -text
