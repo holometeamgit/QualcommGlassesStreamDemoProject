@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SceneHome.unity
+    guid: 11e44933caff747879b06a78a609ddfe
+  - enabled: 1
     path: Assets/MainHoloScene.unity
     guid: fd049d8f967dcc544a748994aa78f4ab
   m_configObjects:

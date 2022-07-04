@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
+//using UnityEngine.XR.ARFoundation;
+//using UnityEngine.XR.ARSubsystems;
 
 public class FocusSquare : PlacementHandler
 {
@@ -189,21 +189,21 @@ public class FocusSquare : PlacementHandler
 
     private void Update()
     {
-        var hits = new List<ARRaycastHit>();
-        m_RaycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.PlaneWithinPolygon);
+        //var hits = new List<ARRaycastHit>();
+        //m_RaycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.PlaneWithinPolygon);
 
-        SurfaceDetected = hits.Count > 0;
+        //SurfaceDetected = hits.Count > 0;
 
-        if (hits.Count > 0)
-        {
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-            {
-                OnPlaceDetected?.Invoke(hits[0].pose.position);
-                hologramPlacedPosition = quad.transform.position;
-            }
+        //if (hits.Count > 0)
+        //{
+        //    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        //    {
+        //        OnPlaceDetected?.Invoke(hits[0].pose.position);
+        //        hologramPlacedPosition = quad.transform.position;
+        //    }
 
-            FollowCamera(hits[0].pose.position);
-        }
+        //    FollowCamera(hits[0].pose.position);
+        //}
 
         HandleOrientation();
         HandleDistanceFade();

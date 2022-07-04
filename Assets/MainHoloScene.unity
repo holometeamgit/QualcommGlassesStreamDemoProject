@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCameraTransform: {fileID: 83868173}
   videoClip: {fileID: 32900000, guid: 3434913fc495c5c4b9a5e1fe2a36b48e, type: 3}
-  liveQuadPrefabRef: {fileID: 0}
+  liveQuadPrefabRef: {fileID: 556219231688079746, guid: 11fb15d33b29d3247919e18910f07d2c, type: 3}
 --- !u!4 &954925802
 Transform:
   m_ObjectHideFlags: 0
