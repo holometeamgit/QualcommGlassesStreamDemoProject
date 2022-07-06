@@ -97,4 +97,8 @@ public class BeemUIControl : MonoBehaviour {
     private void MoveLeft() {
         hologramObject.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.World);
     }
+
+    public void ExitApp() {
+        Application.Quit();
+    }
 }
