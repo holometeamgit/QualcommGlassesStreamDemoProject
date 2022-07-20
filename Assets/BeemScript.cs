@@ -33,8 +33,7 @@ public class BeemScript : MonoBehaviour {
         //holoMe.HologramTransform.parent.gameObject.AddComponent<rk>()           
     }
 
-    public void MoveHologram(Vector3 position) {
-        holoMe.PlaceVideo(position);
+    public void ActivateHologram(Vector3 position) {
         if (!holoMe.IsPlaying) {
             holoMe.PlayVideo(videoClip);
         }
@@ -42,6 +41,12 @@ public class BeemScript : MonoBehaviour {
         if (holoMe.HologramTransform.GetComponent<ARAnchor>() == null) {
             holoMe.HologramTransform.gameObject.AddComponent<ARAnchor>();
         }
+
+        MoveHologram(position);
+    }
+
+    public void MoveHologram(Vector3 position) {
+        holoMe.PlaceVideo(position);
     }
 
     public VideoSurface CreateStreamQuad(string name) {

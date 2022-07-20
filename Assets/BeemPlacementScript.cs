@@ -22,6 +22,8 @@ public class BeemPlacementScript : MonoBehaviour {
     private Transform _camera;
     protected bool ResetSessionOriginOnStart => true;
 
+    private Vector3 defaultPosition = new Vector3(0, -1.25f, 4);
+
     public void Start() {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
@@ -34,7 +36,11 @@ public class BeemPlacementScript : MonoBehaviour {
 
         //FindObjectOfType<ARAnchorManager>().anchorsChanged += OnAnchorsChanged;
         DevicePointer.gameObject.SetActive(false);
-        beemScript.MoveHologram(new Vector3(0, -1.25f, 4));
+        beemScript.ActivateHologram(defaultPosition);
+    }
+
+    public void ResetHologramPosition() {
+        beemScript.MoveHologram(defaultPosition);
     }
 
     public void OnEnable() {
