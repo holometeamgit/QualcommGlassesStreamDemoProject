@@ -21,18 +21,30 @@ public class HologramPlayer : MonoBehaviour {
         txtVideoClipName.text = videoClips[currentIndex].name;
     }
 
-    public void PlayNextClip() {
+    public void PlayPreviousClip() {
+        GetResources();
+        currentIndex = currentIndex <= 0 ? (videoClips.Length - 1) : --currentIndex;
+        videoPlayer.transform.localPosition = new Vector3(videoPlayer.transform.localPosition.x, offset, videoPlayer.transform.localPosition.z);
+        PlayClip();
+    }
 
+    public void PlayNextClip() {
+        GetResources();
+
+        //videoPlayer.Stop();
+        currentIndex = currentIndex >= (videoClips.Length - 1) ? 0 : ++currentIndex;
+        videoPlayer.transform.localPosition = new Vector3(videoPlayer.transform.localPosition.x, offset, videoPlayer.transform.localPosition.z);
+        PlayClip();
+    }
+
+    private void GetResources() {
         if (videoPlayer == null) {
             videoPlayer = FindObjectOfType<VideoPlayer>();
             originalY = videoPlayer.transform.localPosition.y;
         }
+    }
 
-
-        videoPlayer.transform.localPosition = new Vector3(videoPlayer.transform.localPosition.x, offset, videoPlayer.transform.localPosition.z);
-
-        //videoPlayer.Stop();
-        currentIndex = currentIndex >= (videoClips.Length - 1) ? 0 : ++currentIndex;
+    private void PlayClip() {
         videoPlayer.clip = videoClips[currentIndex];
         videoPlayer.Play();
 
