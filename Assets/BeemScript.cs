@@ -1,7 +1,5 @@
 using agora_gaming_rtc;
 using HoloMeSDK;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.XR.ARFoundation;
