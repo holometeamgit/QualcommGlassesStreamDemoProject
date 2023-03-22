@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BeemUIControl : MonoBehaviour {
     [SerializeField]
     private GameObject hologramObject;
+
+    [SerializeField]
+    private Button btnGoLive;
 
     private bool moveLeft;
     private bool moveRight;
@@ -20,6 +24,9 @@ public class BeemUIControl : MonoBehaviour {
         if (hologramObject == null) {
             hologramObject = GameObject.Find("HoloMeParent");
         }
+
+        TestHome testHome = FindObjectOfType<TestHome>();
+        btnGoLive.onClick.AddListener(() => { testHome.JoinManual(); btnGoLive.gameObject.SetActive(false); });
     }
 
     private void Update() {

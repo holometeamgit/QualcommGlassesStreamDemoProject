@@ -5,7 +5,7 @@ public class AgoraHandler : MonoBehaviour {
 
     private IRtcEngine mRtcEngine;
 
-    void Start() {
+    public void Initialise() {
         mRtcEngine = TestHome.testHelloUnityVideo.GetEngine;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         MuteAudio(true);
