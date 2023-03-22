@@ -78,8 +78,7 @@ namespace HoloMeSDK
                 lookRotationOneAxis = quad.AddComponent<LookRotationOneAxis>();
                 quad.GetComponent<MeshCollider>().enabled = false;
                 quad.GetComponent<Renderer>().material.shader = Shader.Find("HLM/Unlit/GreenscreenRemoval");
-                //quad.GetComponent<Renderer>().material.SetFloat("_useAlphaFromMask", 1);
-
+               
                 transparencyHandler = quad.AddComponent<TransparencyHandler>();
                 transparencyHandler.HologramMat = quad.GetComponent<MeshRenderer>().material;
                 transparencyHandler.MakeTransparent(true);

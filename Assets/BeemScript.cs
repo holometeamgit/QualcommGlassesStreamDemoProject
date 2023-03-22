@@ -75,9 +75,8 @@ public class BeemScript : MonoBehaviour {
         //gameobjectAsChild.transform.localScale = new Vector3(2, -3.4f, 1f);
         liveQuadObject.transform.localScale = new Vector3(0.141f, 1f, -0.141f * 1.7f);
         liveQuadObject.transform.localPosition = new Vector3(activeChildCount * 1.4f, 0, 0); //Vector3.zero;
-        liveQuadObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("HLM/Unlit/GreenscreenRemoval");
-        liveQuadObject.GetComponent<MeshRenderer>().material.SetFloat("_useAlphaFromMask", 1);
-
+        //liveQuadObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("HLM/Unlit/GreenscreenRemoval");
+        
         return videoSurface;
     }
 
